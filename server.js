@@ -8,10 +8,10 @@ const cors = require('cors');
 
 app.use(cors())
 
-const corsOptions = {
-  origin: process.env.ALLOWED_CLIENTS.split(',')
-  ['http://localhost:3000', 'http://localhost:5500', 'http://localhost:3300']
-}
+// const corsOptions = {
+//   origin: process.env.ALLOWED_CLIENTS.split(',')
+//   ['http://localhost:3000', 'http://localhost:5500', 'http://localhost:3300']
+// }
 
 // Default configuration looks like
 // {
@@ -23,7 +23,7 @@ const corsOptions = {
 
 app.use(express.static(path.join(__dirname,"./Frontend/public/index.html")))
 
-app.use(cors(corsOptions))
+// app.use(cors(corsOptions))
 app.use(express.static('public'));
 
 const connectDB = require('./config/db');
@@ -35,9 +35,9 @@ app.use(express.json());
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
 
-app.get("/",(req,res)=>{
-  res.send("helloooo")
-})
+// app.get("/",(req,res)=>{
+//   res.send("helloooo")
+// })
 
 // Routes 
 app.use('/api/files', require('./routes/files'));
