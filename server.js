@@ -21,7 +21,7 @@ app.use(cors())
 //     "optionsSuccessStatus": 204
 //   }
 
-app.use(express.static(path.join(__dirname,"./Frontend/public/index.html")))
+// app.use(express.static(path.join(__dirname,"./Frontend/public/index.html")))
 
 // app.use(cors(corsOptions))
 app.use(express.static('public'));
