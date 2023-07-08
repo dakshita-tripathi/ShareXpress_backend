@@ -21,7 +21,7 @@ app.use(cors())
 //     "optionsSuccessStatus": 204
 //   }
 
-// app.use(express.static(path.join(__dirname,"./Frontend/public/index.html")))
+app.use(express.static(path.join(__dirname,"./Frontend/public/index.html")))
 
 // app.use(cors(corsOptions))
 app.use(express.static('public'));
@@ -35,9 +35,9 @@ app.use(express.json());
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
 
-// app.get("/",(req,res)=>{
-//   res.send("helloooo")
-// })
+app.get("/",(req,res)=>{
+  res.send("helloooo")
+})
 
 // Routes 
 app.use('/api/files', require('./routes/files'));
